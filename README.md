@@ -9,28 +9,29 @@ meanwhile monitor the Jenkins and Kubernetes metrics using Grafana, Prometheus a
 # CI/CD Pipeline Overview
 ![Jenkins Pipeline](https://github.com/FarahTrigui/Netflix-DevSecOps/blob/main/jenkins.png)
 The Jenkins pipeline performs the following stages:
-🧹 Clean Workspace
+### 🧹 Clean Workspace
 Clears the Jenkins workspace.
-📥 Git Checkout
+### 📥 Git Checkout
 Pulls source code from GitHub.
-🔍 SonarQube Scan
+### 🔍 SonarQube Scan
 ![sonarQube](https://github.com/FarahTrigui/Netflix-DevSecOps/blob/main/sonarQube.png)
 Performs static code analysis using SonarQube Scanner.
-✅ Quality Gate
+### ✅ Quality Gate
 Verifies code quality through SonarQube’s quality gate.
-📦 Install Dependencies
+### 📦 Install Dependencies
 Installs npm packages.
-🛡 Trivy File System Scan
+### 🛡 Trivy File System Scan
 Scans source files for vulnerabilities.
-🐳 Docker Build & Push
+### 🐳 Docker Build & Push
 Builds Docker image, tags it, and pushes to DockerHub.
-🧪 Trivy Image Scan
+### 🧪 Trivy Image Scan
 Scans Docker image for vulnerabilities.
-🧪 Optional Local Deployment
+### 🧪 Optional Local Deployment
 Runs the image locally using docker run (for quick testing).
-☸️ Kubernetes Deployment
+### ☸️ Kubernetes Deployment
 Applies deployment & service YAMLs to deploy on AKS via kubectl.
-📧 Email Notification
+### 📧 Email Notification
+![email](https://github.com/FarahTrigui/Netflix-DevSecOps/blob/main/mail.png)
 Sends email with build result, logs, and security scan attachments.
 # ☸️ Kubernetes Deployment on AKS
 ![cluster AKS](https://github.com/FarahTrigui/Netflix-DevSecOps/blob/main/cluster-running.jpg)
@@ -53,8 +54,8 @@ Grafana Dashboards created for:
 *Docker container resource usage
 # 🛡 Security: Trivy Scans
 Two types of scans are performed using Trivy:
-🗂 File System Scan: Scans the local project files before image build.
-🐳 Docker Image Scan: Scans the published image for vulnerabilities post-push.
+### 🗂 File System Scan: Scans the local project files before image build.
+### 🐳 Docker Image Scan: Scans the published image for vulnerabilities post-push.
 Scan results are saved as:
 *trivyfs.txt
 *trivyimage.txt
