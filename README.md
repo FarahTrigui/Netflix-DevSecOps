@@ -40,7 +40,7 @@ AKS cluster created via Azure CLI or Azure Portal.
 kubeconfig exported using az aks get-credentials and uploaded to Jenkins as a Secret File.
 Jenkins uses withKubeConfig to apply manifests inside the Kubernetes folder.
 # Monitoring Setup
-## Prometeus :
+## Prometheus :
 ![prometheus Jenkins](https://github.com/FarahTrigui/Netflix-DevSecOps/blob/main/prometheus.png)
 ## Grafana :
 ![Grafana Jenkins](https://github.com/FarahTrigui/Netflix-DevSecOps/blob/main/grafana.png)
